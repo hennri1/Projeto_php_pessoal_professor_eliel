@@ -1,0 +1,102 @@
+//Pseudocódigo – Jogador
+
+INÍCIO
+
+LER acao
+
+SE acao = "cadastrar" ENTÃO
+    LER nome_jogador, email_jogador, discord_jogador, elo_id
+    EXECUTAR SQL:
+        INSERT INTO jogador (nome_jogador, email_jogador, discord_jogador, elo_id)
+        VALUES (dados recebidos)
+    REDIRECIONAR para lista-jogador
+FIMSE
+
+SE acao = "editar" ENTÃO
+    LER id_jogador, nome_jogador, email_jogador, discord_jogador, elo_id
+    EXECUTAR SQL:
+        UPDATE jogador SET
+            nome_jogador = valor,
+            email_jogador = valor,
+            discord_jogador = valor,
+            elo_id = valor
+        WHERE id_jogador = id informado
+    REDIRECIONAR para lista-jogador
+FIMSE
+
+SE acao = "excluir" ENTÃO
+    LER id_jogador
+    EXECUTAR SQL:
+        DELETE FROM jogador WHERE id_jogador = id informado
+    REDIRECIONAR para lista-jogador
+FIMSE
+
+FIM
+
+INÍCIO
+
+LER acao
+
+SE acao = "cadastrar" ENTÃO
+    LER nome_boostador, email_boostador, discord_boostador, elo_id
+    EXECUTAR SQL:
+        INSERT INTO boostador (nome_boostador, email_boostador, discord_boostador, elo_id)
+        VALUES (dados recebidos)
+    REDIRECIONAR para lista-boostador
+FIMSE
+
+SE acao = "editar" ENTÃO
+    LER id_boostador, nome_boostador, email_boostador, discord_boostador, elo_id
+    EXECUTAR SQL:
+        UPDATE boostador SET
+            nome_boostador = valor,
+            email_boostador = valor,
+            discord_boostador = valor,
+            elo_id = valor
+        WHERE id_boostador = id informado
+    REDIRECIONAR para lista-boostador
+FIMSE
+
+SE acao = "excluir" ENTÃO
+    LER id_boostador
+    EXECUTAR SQL:
+        DELETE FROM boostador WHERE id_boostador = id informado
+    REDIRECIONAR para lista-boostador
+FIMSE
+
+FIM
+
+//Pseudocódigo – Boostador
+
+INÍCIO
+
+LER acao
+
+SE acao = "cadastrar" ENTÃO
+    LER nome_boostador, email_boostador, discord_boostador, elo_id
+    EXECUTAR SQL:
+        INSERT INTO boostador (nome_boostador, email_boostador, discord_boostador, elo_id)
+        VALUES (dados recebidos)
+    REDIRECIONAR para lista-boostador
+FIMSE
+
+SE acao = "editar" ENTÃO
+    LER id_boostador, nome_boostador, email_boostador, discord_boostador, elo_id
+    EXECUTAR SQL:
+        UPDATE boostador SET
+            nome_boostador = valor,
+            email_boostador = valor,
+            discord_boostador = valor,
+            elo_id = valor
+        WHERE id_boostador = id informado
+    REDIRECIONAR para lista-boostador
+FIMSE
+
+SE acao = "excluir" ENTÃO
+    LER id_boostador
+    EXECUTAR SQL:
+        DELETE FROM boostador WHERE id_boostador = id informado
+    REDIRECIONAR para lista-boostador
+FIMSE
+
+FIM

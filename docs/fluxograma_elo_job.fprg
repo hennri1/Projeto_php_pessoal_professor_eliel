@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value="CRUD Geral - Sistema Elo Job"/>
+        <attribute name="authors" value="Henrique"/>
+        <attribute name="about" value="Fluxograma geral do CRUD (Cadastrar, Editar, Excluir) para Jogador e Boostador"/>
+        <attribute name="saved" value="2025-11-27 20:30:00 "/>
+    </attributes>
+
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            
+            <!-- Variáveis -->
+            <declare name="acao" type="String" array="False" size=""/>
+            <declare name="dadosValidos" type="Boolean" array="False" size=""/>
+            <declare name="bancoOnline" type="Boolean" array="False" size=""/>
+
+            <!-- Início -->
+            <output expression="&quot;--- SISTEMA ELO JOB - CRUD GERAL ---&quot;" newline="True"/>
+            <output expression="&quot;Escolha a ação (cadastrar / editar / excluir):&quot;" newline="True"/>
+            <input variable="acao"/>
+
+            <!-- Verificação da Ação -->
+            <if expression="acao == &quot;cadastrar&quot;">
+                <then>
+                    <output expression="&quot;Ação selecionada: Cadastrar&quot;" newline="True"/>
+                    <assign variable="dadosValidos" expression="true"/>
+                </then>
+
+                <else>
+                    <if expression="acao == &quot;editar&quot;">
+                        <then>
+                            <output expression="&quot;Ação selecionada: Editar&quot;" newline="True"/>
+                            <assign variable="dadosValidos" expression="true"/>
+                        </then>
+
+                        <else>
+                            <if expression="acao == &quot;excluir&quot;">
+                                <then>
+                                    <output expression="&quot;Ação selecionada: Excluir&quot;" newline="True"/>
+                                    <assign variable="dadosValidos" expression="true"/>
+                                </then>
+
+                                <else>
+                                    <assign variable="dadosValidos" expression="false"/>
+                                    <output expression="&quot;ERRO: Ação inválida!&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+
+            <if expression="dadosValidos">
+                <then>
+
+                    <!-- Simulação Banco -->
+                    <assign variable="bancoOnline" expression="true"/>
+                    <output expression="&quot;Conectando ao Banco 'elo_job_lol'...&quot;" newline="True"/>
+
+                    <if expression="bancoOnline">
+                        <then>
+                            <if expression="acao == &quot;cadastrar&quot;">
+                                <then>
+                                    <output expression="&quo
